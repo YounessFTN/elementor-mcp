@@ -1,0 +1,69 @@
+name: Bug report
+description: Something in the plugin does not work as documented.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. **Never paste your license key, application password, OAuth token or `Authorization` header here**: this repository is public.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: Shown on the WordPress Plugins screen.
+      placeholder: "3.3.0"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: WordPress, Elementor and PHP versions
+      placeholder: "WordPress 6.9, Elementor 4.1, PHP 8.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: client
+    attributes:
+      label: AI assistant
+      options:
+        - claude.ai / Claude mobile app
+        - Claude Desktop
+        - Claude Code
+        - ChatGPT
+        - Cursor
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: auth
+    attributes:
+      label: Connection method
+      options:
+        - OAuth sign-in
+        - Application password (MCP_ELEMENTOR)
+        - Not connected yet
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: Tool involved (if any)
+      placeholder: "insert-elements"
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you asked, what the assistant or the plugin did, and the exact error message if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostic
+    attributes:
+      label: Diagnostic (optional)
+      description: For connection problems, copy the result of the Diagnostic block on *Elementor MCP → Configuration MCP*. Remove anything secret first.

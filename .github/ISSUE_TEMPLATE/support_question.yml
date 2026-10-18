@@ -1,0 +1,21 @@
+name: Question or help
+description: Setup, connection or usage question.
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before asking, the [docs](https://www.mcp-elementor.com/en/docs) and the [troubleshooting page](https://www.mcp-elementor.com/en/docs/troubleshooting) cover installation, license activation and connecting each assistant.
+
+        **Never paste your license key, application password, OAuth token or `Authorization` header here**: this repository is public. For anything about your purchase or license, email youness@fatine.fr instead.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: input
+    id: context
+    attributes:
+      label: Plugin version and AI assistant
+      placeholder: "3.3.0, claude.ai"

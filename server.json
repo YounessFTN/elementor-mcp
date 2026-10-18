@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.mcp-elementor/elementor-mcp",
+  "title": "Elementor MCP Créateur (third-party plugin)",
+  "description": "Mockup to native, editable Elementor page from claude.ai or ChatGPT: design tokens, SEO, Schema.org.",
+  "version": "3.3.0",
+  "websiteUrl": "https://www.mcp-elementor.com/en",
+  "icons": [
+    { "src": "https://www.mcp-elementor.com/logo-black.svg", "mimeType": "image/svg+xml", "sizes": ["any"], "theme": "light" }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://{site_domain}/wp-json/elementor-mcp-createur/mcp",
+      "variables": {
+        "site_domain": {
+          "description": "Domain of the WordPress site where the plugin is installed, without https:// (e.g. example.com)",
+          "isRequired": true,
+          "placeholder": "example.com"
+        }
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional. Leave empty for OAuth 2.1 sign-in (claude.ai, ChatGPT, Claude Desktop): log in to WordPress and approve. Clients without OAuth: Basic base64(MCP_ELEMENTOR:application-password), from WP admin > Elementor MCP > Configuration MCP.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
